@@ -1,0 +1,22 @@
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  position: relative;
+}
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.navbar-brand .navbar-item {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.shopping-cart {
+  margin-left: auto;
+  width: 3.25rem;
+}

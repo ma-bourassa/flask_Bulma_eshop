@@ -1,13 +1,126 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>eShop Project</title>
-  </head>
 
-  <body>
-    {% block content %} {% endblock %}
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>eShop Project</title>
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css')}}">
+  <!-- JavaScript -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="{{ url_for('static', filename='js/navbar.js')}}"></script>
+</head>
+
+<body>
+  <!-- NavBar -->
+  <nav id="navbar" role="navigation" aria-label="main navigation" class="navbar has-shadow is-spaced is-light">
+    <div class="container">
+      <!-- NavBar-Brand -->
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger is-marginless" data-target="navMenu" aria-label="menu"
+          aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <a class="navbar-item" href="/">
+          <i class="fab fa-fort-awesome-alt fa-fw fa-lg"></i>
+          &nbsp;
+          eShop Project
+        </a>
+
+        <a class="navbar-item is-hidden-desktop shopping-cart">
+          <span class="icon" style="color: #333;">
+            <i class="fas fa-shopping-cart"></i>
+          </span>
+        </a>
+
+
+      </div>
+
+
+      <div class="navbar-menu" id="navMenu">
+        <!-- NavBar-Start -->
+
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+
+          <a class="navbar-item">
+            Documentation
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About
+              </a>
+              <a class="navbar-item">
+                Jobs
+              </a>
+              <a class="navbar-item">
+                Contact
+              </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item">
+                Report an issue
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- NavBar-End -->
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light">
+                Log in
+              </a>
+            </div>
+          </div>
+          <a class="navbar-item is-hidden-touch is-hidden-desktop-only shopping-cart">
+            <span class="icon" style="color: #333;">
+              <i class="fas fa-lg fa-shopping-cart"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      {% block content %} {% endblock %}
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          <strong>eShop project</strong> by <a href="https://github.com/bouhrassa">Marc-Andre Bourassa</a>. The source
+          code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
