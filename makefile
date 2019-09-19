@@ -1,11 +1,13 @@
-BIN=venv/bin/
+VENV_NAME?=venv
+BIN=${VENV_NAME}/bin/
+PYTHON=${VENV_NAME}/bin/python3
 
-.PHONY: help prepare-dev test run
+.PHONY: help install test run clean
 
 .DEFAULT: help
 help:
 	@echo "make install"
-	@echo "       prepare development environment, use only once"
+	@echo "       install dependencies environment, use only once"
 	@echo "make test"
 	@echo "       run tests"
 	@echo "make run"
@@ -22,16 +24,14 @@ venv: venv/bin/activate
 venv/bin/activate: requirements.txt
 	test -d venv || python3 -m venv venv
 	$(BIN)pip install -r requirements.txt
+	touch $(BIN)activate
 
 test: venv
-	${BIN}python -m pytest
+	${PYTHON} -m pytest
 
 run: venv
-	${BIN}python app.py
+	${PYTHON} app.py
 
 clean:
 	rm -rf venv
 	find -iname "*.pyc" -delete
-
-
-

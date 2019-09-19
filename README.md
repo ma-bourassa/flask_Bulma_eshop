@@ -17,7 +17,7 @@ git clone git@github.com:bouhrassa/eshop_project.git
 
 ```bash
 cd eshop_project
-python -m venv venv && . venv/bin/activate
+python -m venv venv && source venv/bin/activate
 pip install -Ur requirements.txt
 
 ```
