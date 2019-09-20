@@ -63,8 +63,8 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-primary has-text-weight-bold" href="{{ url_for('register')}}">Sign up</a>
-              <a class="button is-light">Log in</a>
+              <a class="button is-primary has-text-weight-bold" href="{{ url_for('register')}}">Register</a>
+              <a class="button is-info" href="{{ url_for('login')}}">Sign in</a>
             </div>
           </div>
           <a class="navbar-item is-hidden-touch is-hidden-desktop-only shopping-cart">
@@ -79,12 +79,21 @@
 
   <section class="section">
     <div class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="notification {{ category }}">
+        {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
       {% block content %} {% endblock %}
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer has-background-light">
     <div class="container">
       <div class="content has-text-centered">
         <p>

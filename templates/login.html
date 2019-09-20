@@ -1,0 +1,36 @@
+{% extends 'layout.html' %} {% block content %}
+
+<form id="register-form" method="POST" action="">
+  {{ form.hidden_tag() }}
+  <div class="columns is-6 is-centered box">
+    <div class="column is-6 ">
+      <div class="title">Hello</div>
+      <div class="subtitle">Sign in to eShop</div>
+      <hr>
+      <div class="field">
+        {{ form.username.label(class="label") }}
+        <div class="control has-icons-left">
+          {{ form.username(class="input is-medium", placeholder="Username") }}
+          <span class="icon is-left"><i class="fa fa-user"></i></span>
+        </div>
+      </div>
+
+      <div class="field">
+        {{ form.password.label(class="label") }}
+        <div class="control has-icons-left">
+          {{ form.password(class="input is-medium", placeholder="Password") }}
+          <span class="icon is-left"><i class="fa fa-key"></i></span>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          {{ form.submit(class="button is-primary is-outlined is-medium") }}
+        </div>
+      </div>
+      <hr>
+      <small>Don't have an account yet? <a href="{{ url_for('login') }}">Register</a> </small>
+    </div>
+  </div>
+</form>
+
+{% endblock content %}
