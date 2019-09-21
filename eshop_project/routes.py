@@ -1,9 +1,7 @@
-from flask import Flask, escape, request, render_template, url_for, redirect, flash
-from forms import RegistrationForm, LoginForm
-
-app = Flask(__name__)
-
-app.config['SECRET_KEY'] = '5f1935debf3fa66cd472b4d2fec883fa'
+from flask import request, render_template, url_for, redirect, flash
+from eshop_project.forms import RegistrationForm, LoginForm
+from eshop_project import app
+from eshop_project.services import UserServices
 
 
 @app.route('/')
@@ -21,9 +19,10 @@ def about():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
+        UserServices.createUser(form)
         flash(
-            f'Membership created successfully for {form.username.data}!', 'is-primary')
-        return redirect(url_for('home'))
+            f'Your account has been created. You can now log in. {form.username.data}!', 'is-primary')
+        return redirect(url_for('login'))
     return render_template('register.html', form=form)
 
 
@@ -35,7 +34,3 @@ def login():
             f'Membership created successfully for {form.username.data}!', 'is-primary')
         return redirect(url_for('home'))
     return render_template('login.html', form=form)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)

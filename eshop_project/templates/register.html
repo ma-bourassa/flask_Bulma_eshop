@@ -12,9 +12,9 @@
         {{ form.username.label(class="label") }}
         <div class="control has-icons-left">
           {% if form.username.errors %}
-          {{ form.username(class="input is-medium is-danger", placeholder="Username") }}
+            {{ form.username(class="input is-medium is-danger", placeholder="Username") }}
           {% else %}
-          {{ form.username(class="input is-medium", placeholder="Username") }}
+            {{ form.username(class="input is-medium", placeholder="Username") }}
           {% endif %}
           <span class="icon is-left"><i class="fa fa-user"></i></span>
         </div>
@@ -29,15 +29,15 @@
         {{ form.email.label(class="label") }}
         <div class="control has-icons-left">
           {% if form.email.errors %}
-          {{ form.email(class="input is-medium is-danger", placeholder="Email") }}
+            {{ form.email(class="input is-medium is-danger", placeholder="Email") }}
           {% else %}
-          {{ form.email(class="input is-medium", placeholder="Email") }}
+            {{ form.email(class="input is-medium", placeholder="Email") }}
           {% endif %}
           <span class="icon is-left"><i class="fa fa-envelope-square"></i></span>
         </div>
         <div class="help is-danger">
           {% for error in form.email.errors %}
-          <span>{{ error }}</span>
+            <span>{{ error }}</span>
           {% endfor %}
         </div>
       </div>
@@ -48,15 +48,15 @@
             {{ form.password.label(class="label") }}
             <div class="control has-icons-left">
               {% if form.password.errors %}
-              {{ form.password(class="input is-medium is-danger", placeholder="Password") }}
+                {{ form.password(class="input is-medium is-danger", placeholder="Password") }}
               {% else %}
-              {{ form.password(class="input is-medium", placeholder="Password") }}
+                {{ form.password(class="input is-medium", placeholder="Password") }}
               {% endif %}
               <span class="icon is-left"><i class="fa fa-key"></i></span>
             </div>
             <div class="help is-danger">
               {% for error in form.password.errors %}
-              <span>{{ error }}</span>
+                <span>{{ error }}</span>
               {% endfor %}
             </div>
           </div>
@@ -64,16 +64,16 @@
             {{ form.passwordConfirmation.label(class="label") }}
             <div class="control has-icons-left">
               {% if form.passwordConfirmation.errors %}
-              {{ form.passwordConfirmation(class="input is-medium is-danger", placeholder="Confirm password") }}
+                {{ form.passwordConfirmation(class="input is-medium is-danger", placeholder="Confirm password") }}
               {% else %}
-              {{ form.passwordConfirmation(class="input is-medium", placeholder="Confirm password") }}
+                {{ form.passwordConfirmation(class="input is-medium", placeholder="Confirm password") }}
               {% endif %}
               <span class="icon is-left"><i class="fa fa-lock"></i></span>
             </div>
           </div>
           <div class="help is-danger">
             {% for error in form.passwordConfirmation.errors %}
-            <span>{{ error }}</span>
+              <span>{{ error }}</span>
             {% endfor %}
           </div>
         </div>

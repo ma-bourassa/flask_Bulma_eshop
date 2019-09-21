@@ -26,12 +26,13 @@ venv/bin/activate: requirements.txt
 	$(BIN)pip install -r requirements.txt
 	touch $(BIN)activate
 
-test: venv
+test:
 	${PYTHON} -m pytest
 
-run: venv
-	${PYTHON} app.py
+run:
+	${PYTHON} run.py
 
 clean:
 	rm -rf venv
 	find -iname "*.pyc" -delete
+	find -iname "*.db" -delete
