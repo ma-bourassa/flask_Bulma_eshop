@@ -21,3 +21,7 @@ body > footer {
   margin-left: auto;
   width: 3.25rem;
 }
+
+.navbar {
+  margin-bottom: 1rem;
+}

@@ -1,5 +1,7 @@
-// NavBar Burger
 document.addEventListener('DOMContentLoaded', () => {
+    
+    
+    // NavBar Burger
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     if ($navbarBurgers.length > 0) {
         $navbarBurgers.forEach(el => {
@@ -12,4 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Delete notification
+    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+        $notification = $delete.parentNode;
+        $delete.addEventListener('click', () => {
+            $notification.parentNode.removeChild($notification);
+        });
+    });
 });
+
