@@ -10,7 +10,7 @@
       <div class="field">
         {{ form.username.label(class="label") }}
         <div class="control has-icons-left">
-          {{ form.username(class="input is-medium", placeholder="Username") }}
+          {{ form.username(class="input is-medium", placeholder="Username", autofocus=true) }}
           <span class="icon is-left"><i class="fa fa-user"></i></span>
         </div>
       </div>
@@ -34,7 +34,7 @@
         </div>
       </div>
       <hr>
-      <small>Don't have an account yet? <a href="{{ url_for('login') }}">Register</a> </small>
+      <small>Don't have an account yet? <a href="{{ url_for('users.login') }}">Register</a> </small>
     </div>
   </div>
 </form>

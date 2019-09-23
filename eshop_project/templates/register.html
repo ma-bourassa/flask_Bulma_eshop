@@ -12,9 +12,9 @@
         {{ form.username.label(class="label") }}
         <div class="control has-icons-left">
           {% if form.username.errors %}
-            {{ form.username(class="input is-medium is-danger", placeholder="Username") }}
+            {{ form.username(class="input is-medium is-danger", placeholder="Username", autofocus=true) }}
           {% else %}
-            {{ form.username(class="input is-medium", placeholder="Username") }}
+            {{ form.username(class="input is-medium", placeholder="Username", autofocus=true) }}
           {% endif %}
           <span class="icon is-left"><i class="fa fa-user"></i></span>
         </div>
@@ -85,7 +85,7 @@
         </div>
       </div>
       <hr>
-      <small>Already have an account? <a href="{{ url_for('login') }}">Sign in</a> </small>
+      <small>Already have an account? <a href="{{ url_for('users.login') }}">Sign in</a> </small>
     </div>
   </div>
 </form>

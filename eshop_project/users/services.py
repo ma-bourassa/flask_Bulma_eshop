@@ -1,6 +1,7 @@
-from eshop_project.models import User
-from eshop_project import db
 from flask_login import login_user, logout_user
+
+from eshop_project import db
+from eshop_project.users.models import User
 
 
 class UserServices(object):

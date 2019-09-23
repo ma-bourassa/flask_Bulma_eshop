@@ -64,15 +64,15 @@
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link has-text-weight-bold">My account</a>
               <div class="navbar-dropdown">
-                <a class="navbar-item" href="{{ url_for('account')}}">Info</a>
+                <a class="navbar-item" href="{{ url_for('users.account')}}">Info</a>
                 <hr class="navbar-divider" />
-                <a class="navbar-item has-text-danger" href="{{ url_for('logout')}}">Logout</a>
+                <a class="navbar-item has-text-danger" href="{{ url_for('users.logout')}}">Logout</a>
               </div>
             </div>
             {% else %}
             <div class="buttons">
-              <a class="button is-primary has-text-weight-bold" href="{{ url_for('register')}}">Register</a>
-              <a class="button is-info" href="{{ url_for('login')}}">Sign in</a>
+              <a class="button is-primary has-text-weight-bold" href="{{ url_for('users.register')}}">Register</a>
+              <a class="button is-info" href="{{ url_for('users.login')}}">Sign in</a>
             </div>
             {% endif %}
           </div>
