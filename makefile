@@ -23,7 +23,7 @@ install:
 venv: venv/bin/activate
 venv/bin/activate: requirements.txt
 	test -d venv || python3 -m venv venv
-	$(BIN)pip install -r requirements.txt
+	$(BIN)pip install --no-cache-dir -r requirements.txt
 	touch $(BIN)activate
 
 test:
