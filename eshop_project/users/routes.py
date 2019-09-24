@@ -15,7 +15,7 @@ def register():
     if form.validate_on_submit():
         UserServices.createUser(form)
         flash(
-            f'Your account has been created. You can now log in. {form.username.data}!', 'is-primary')
+            f'Your account has been created. You can now log in {form.username.data}!', 'is-primary')
         return redirect(url_for('users.login'))
     return render_template('register.html', form=form)
 

@@ -13,11 +13,15 @@ def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(Config)
     db.init_app(app)
-    login_manager.init_app(app)
+    login_manager.init_app(app)        
 
     from eshop_project.users.routes import users
     from eshop_project.main.routes import main
     app.register_blueprint(main)
     app.register_blueprint(users)
 
+    with app.app_context():
+        from eshop_project.users import routes
+        db.create_all()
+        
     return app
