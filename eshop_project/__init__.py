@@ -9,19 +9,23 @@ login_manager = LoginManager()
 login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'is-warning'
 
+
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(Config)
     db.init_app(app)
-    login_manager.init_app(app)        
+    login_manager.init_app(app)
 
     from eshop_project.users.routes import users
     from eshop_project.main.routes import main
+    from eshop_project.errors.handler import errors
+
     app.register_blueprint(main)
     app.register_blueprint(users)
+    app.register_blueprint(errors)
 
     with app.app_context():
         from eshop_project.users import routes
         db.create_all()
-        
+
     return app

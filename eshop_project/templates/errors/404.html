@@ -1,0 +1,9 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="columns is-centered">
+    <div class="column is-half">
+        <h1 class="title ">Page not found (404)</h1>
+        <h2 class="subtitle">This page does not exist.</h2>
+        <a class="button is-info" href="{{ url_for('main.home')}}">Take me home</a>
+    </div>
+</div>
+{% endblock content %}
