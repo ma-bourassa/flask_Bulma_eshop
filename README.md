@@ -1,29 +1,26 @@
-# eShop project
+# Flask/Bulma eShop
 
-## Prerequisites
-
-- [Python 3](https://www.python.org/)
-- [Pip](https://pypi.org/project/pip/)
+This is a basic web application made with Flask.
 
 ## Instructions
 
-1. Clone the project.
+1. Install the dependencies.
 
 ```bash
-git clone git@github.com:bouhrassa/eshop_project.git
+cd flask_Bulma_eshop
+make install
+
 ```
 
-2. Create a virtual environment and install dependencies.
+2. Activate the virtual environment.
 
 ```bash
-cd eshop_project
-python -m venv venv && source venv/bin/activate
-pip install -Ur requirements.txt
+source venv/bin/activate
 
 ```
 
 3. Run the app.
 
 ```bash
-python app.py
+make run
 ```
